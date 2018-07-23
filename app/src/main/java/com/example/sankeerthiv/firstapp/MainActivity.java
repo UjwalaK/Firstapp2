@@ -41,13 +41,6 @@ public class MainActivity extends AppCompatActivity
 
                 Intent active = new Intent(MainActivity.this,ActiveIncident.class);
                 System.out.print("");
-
-
-
-
-
-
-
                 startActivity(active);
 
             }
