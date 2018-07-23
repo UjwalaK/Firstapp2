@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#01579b">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/vmwarenew4"></RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="353dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#e1f5fe">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_image_view"
+                android:backgroundTint="#ffffff"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/ic_whatshot_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_image_view"
+                android:scaleType="fitCenter"
+                android:backgroundTint="#ffffff"
+                android:layout_toRightOf="@id/imageButton"
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@drawable/ic_offline_pin_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_image_view"
+                android:scaleType="fitCenter"
+                android:layout_toRightOf="@id/imageButton2"
+                app:srcCompat="@drawable/ic_healing_black_24dp"
+                android:layout_marginLeft="50dp"
+                android:backgroundTint="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="106dp"
+                android:layout_marginStart="48dp"
+                android:text="Active Incident"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@+id/imageButton2"
+                android:layout_alignTop="@+id/textView"
+                android:text="Closed Incident"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:layout_alignStart="@+id/imageButton3"
+                android:layout_below="@+id/imageButton"
+                android:text="Report Incident"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp">
+        <SearchView
+            android:id="@+id/allSearch"
+            android:layout_width="230dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_search_rounded"
+           >
+
+        </SearchView></RelativeLayout>
+
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
