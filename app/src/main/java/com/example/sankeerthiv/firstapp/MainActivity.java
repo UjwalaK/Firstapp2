@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
 
                 Intent active = new Intent(MainActivity.this,ActiveIncident.class);
                 System.out.println("");
+                System.out.print("Bye");
                 startActivity(active);
 
             }
