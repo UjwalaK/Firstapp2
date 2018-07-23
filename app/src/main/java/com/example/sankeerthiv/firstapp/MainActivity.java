@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
 
                 Intent active = new Intent(MainActivity.this,ActiveIncident.class);
-
+                System.out.println("");
                 startActivity(active);
 
             }
