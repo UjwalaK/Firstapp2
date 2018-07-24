@@ -7,10 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".Welcome_Login_Activity">
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </WebView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <ImageView
+            android:id="@+id/login_splash"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/vmwarelogoicon" />
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLogin1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:visibility="gone"
+            android:layout_marginTop="2dp">
+
+
+
+
+
+             <WebView
+
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+            </WebView>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
 
 </RelativeLayout>
