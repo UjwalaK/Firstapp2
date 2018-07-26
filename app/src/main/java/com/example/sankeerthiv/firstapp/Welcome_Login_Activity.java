@@ -31,7 +31,7 @@ public class Welcome_Login_Activity extends AppCompatActivity {
         }
     };
 
-
+    public static final String AUTH_URL="https://herocard.vmwareidentity.com/SAAS/auth/";
 
 
 
@@ -49,12 +49,15 @@ public class Welcome_Login_Activity extends AppCompatActivity {
 
 
         webView = (WebView) findViewById(R.id.webview);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://login.vmware.com");
+        webView.bringToFront();
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
+        webView.setWebViewClient(new LoginWebView() );
+        webView.loadUrl("https://herocard.vmwareidentity.com/SAAS/auth/login?dest=https://herocard.vmwareidentity.com/SAAS/auth/oauth2/authorize?response_type%3Dcode%26client_id%3Dappbuilder-mobileapps-dev%26redirect_uri%3Dhttp://localhost:8080&chainedauthMethods=%5B%7B%22chainedAuthmethods%22:%5B%7B%22authMethoId%22:913533,%22authMethodOrder%22:0%7D%5D%7D,%7B%22chainedAuthmethods%22:%5B%7B%22authMethoId%22:845496,%22authMethodOrder%22:0%7D%5D%7D%5D&ttl=28800");
 
     }
 
-    /*private class LoginWebView extends WebViewClient{
+    private class LoginWebView extends WebViewClient{
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -69,8 +72,17 @@ public class Welcome_Login_Activity extends AppCompatActivity {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            Toast.makeText(Welcome_Login_Activity.this, "Login Success", Toast.LENGTH_SHORT).show();
+            if(isFinishing() || Welcome_Login_Activity.this.isDestroyed()){
+                return;
+            }
+            UrlQuerySanitizer urlQuerySanitizer = new UrlQuerySanitizer(url);
+            Toast.makeText(Welcome_Login_Activity.this, url+ " URL", Toast.LENGTH_SHORT).show();
             Log.v("URL",url);
+
+            String code = urlQuerySanitizer.getValue("code");
+            Toast.makeText(Welcome_Login_Activity.this, code, Toast.LENGTH_SHORT).show();
+
+//            Log.v("URL",code);
         }
 
         @Override
@@ -78,5 +90,10 @@ public class Welcome_Login_Activity extends AppCompatActivity {
             super.onReceivedError(view, request, error);
             Toast.makeText(Welcome_Login_Activity.this, "Login Failed", Toast.LENGTH_SHORT).show();
         }
-    }*/
+    }
+
+
+    public void callAuthUrl(String code ){
+
+    }
 }
